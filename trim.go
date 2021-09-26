@@ -21,5 +21,11 @@ func TrimLeftSpace(s string) string {
 		lines = append(lines, string(rns[1:]))
 	}
 
-	return TrimLeftSpace(strings.Join(lines, "\n"))
+	s = strings.Join(lines, "\n")
+
+	if len(strings.TrimSpace(s)) == 0 {
+		return s
+	}
+
+	return TrimLeftSpace(s)
 }

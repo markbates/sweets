@@ -21,6 +21,8 @@ func Test_Trim(t *testing.T) {
 		{in: "b.txt", exp: "  line a\nline b\n  line c"},
 		{in: "c.txt", exp: "line a\nline b\nline c"},
 		{in: "d.txt", exp: "line a\n  line b\n\nline c"},
+		{in: "e.txt", exp: "package main\n\nimport (\n\t\"io\"\n\t\"os\"\n)\n\nfunc main() {\n\twriteSomething(os.Stdout)\n\t// Hello\n}\n\nfunc writeSomething(w io.Writer) {\n\tw.Write([]byte(\"Hello\"))\n}\n"},
+		// {in: "f.txt", exp: "line a\n  line b\n\nline c"},
 	}
 
 	for _, tt := range table {
