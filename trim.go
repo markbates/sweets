@@ -5,7 +5,7 @@ import (
 	"unicode"
 )
 
-func Trim(s string) string {
+func TrimLeftSpace(s string) string {
 	var lines []string
 
 	for _, line := range strings.Split(s, "\n") {
@@ -21,5 +21,5 @@ func Trim(s string) string {
 		lines = append(lines, string(rns[1:]))
 	}
 
-	return Trim(strings.Join(lines, "\n"))
+	return TrimLeftSpace(strings.Join(lines, "\n"))
 }

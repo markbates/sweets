@@ -30,7 +30,7 @@ func Test_Trim(t *testing.T) {
 			b, err := fs.ReadFile(cab, tt.in)
 			r.NoError(err)
 
-			act := Trim(string(b))
+			act := TrimLeftSpace(string(b))
 			r.Equal(tt.exp, act)
 
 		})
